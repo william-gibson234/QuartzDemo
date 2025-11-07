@@ -1,18 +1,13 @@
-# Quartz v4
+# TypeScript Demo with Quartz
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+A clean Quartz installation for demonstrating TypeScript concepts using Obsidian notes.
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
-Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
+## Setup
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+1. Install dependencies: `npm install`
+2. Build the site: `npm run quartz build`
+3. Preview locally: `npm run quartz build --serve`
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+## Content
 
-## Sponsors
-
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+Your Obsidian vault is located in the `content/` folder. Edit your notes there and rebuild to see changes.
