@@ -12,7 +12,9 @@ export const WordCount: QuartzTransformerPlugin = () => {
                 () =>{
                     return async (tree: HTMLRoot, file: VFile) => {
                         let text = toString(tree);
-                        console.log(text);
+                        //console.log(text);
+                        let wordCount = count(text);
+                        console.log(wordCount);
                     }
                 }
             ]
