@@ -2,4 +2,4 @@
 title: JV Setlist Information Storage
 ---
 
-Storing information on the band Junior Varsity's setlist
+Storing information on setlist for the band Junior Varsity
