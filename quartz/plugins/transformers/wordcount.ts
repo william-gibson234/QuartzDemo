@@ -2,6 +2,7 @@ import { Root as HTMLRoot } from "hast";
 import { toString } from "hast-util-to-string";
 import count from "word-count";
 import { QuartzTransformerPlugin } from "../types";
+import { VFile } from "vfile";
 
 export const WordCount: QuartzTransformerPlugin = () => {
     return{
@@ -9,7 +10,7 @@ export const WordCount: QuartzTransformerPlugin = () => {
         htmlPlugins(){
             return [
                 () =>{
-                    return async (tree: HTMLRoot,file) =>{
+                    return async (tree: HTMLRoot, file: VFile) => {
                         let text = toString(tree);
                         console.log(text);
                     }
