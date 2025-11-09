@@ -14,7 +14,7 @@ export const WordCount: QuartzTransformerPlugin = () => {
                         let text = toString(tree);
                         //console.log(text);
                         let wordCount = count(text);
-                        console.log(wordCount);
+                        console.log(file.data.relativePath,': ',wordCount);
                     }
                 }
             ]
