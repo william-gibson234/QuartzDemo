@@ -1,12 +1,5 @@
 import { QuartzFilterPlugin } from "../types"
-
-const allowedGenreMap:Record<string,boolean> ={
-    "punk rock": true,
-    "pop rock": true,
-    "alt rock": true,
-    "country": true,
-    "german metal":false,
-}
+import {allowedGenreMap} from "../allowedGenreConfig"
 
 
 export const FilterGenre: QuartzFilterPlugin<{}> = () => ({
@@ -35,3 +28,5 @@ export const FilterGenre: QuartzFilterPlugin<{}> = () => ({
         return false;
     },
 })
+
+//export const getGenreOccurrencesMap = () =>
