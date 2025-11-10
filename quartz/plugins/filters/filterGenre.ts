@@ -5,7 +5,7 @@ const allowedGenreMap:Record<string,boolean> ={
     "pop-rock": true,
     "alt-rock": true,
     "country": true,
-    "egyptian-synth-pop-fusion":false,
+    "german-metal":false,
 }
 
 
