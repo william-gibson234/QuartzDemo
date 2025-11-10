@@ -25,7 +25,9 @@ export const GenreCount: QuartzTransformerPlugin = () => {
         }
     }
 }
-
+export const getGenreOccurencesMap = () => {
+    return genreOccurencesMap;
+}
 function createEmptyGenreOccurencesMap(allowedGenres: Record<string,boolean>): Record<string, number> {
     const genreOccurencesMap:Record<string, number> ={};
     for (const genre of Object.keys(allowedGenres)) {
