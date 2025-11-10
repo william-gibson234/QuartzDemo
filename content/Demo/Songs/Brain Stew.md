@@ -1,5 +1,5 @@
 ---
 tags:
-- punk rock
+- genre: punk rock
 ---
 **A Major, 76 bpm, on Gibby and Urav**
