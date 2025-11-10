@@ -1,10 +1,14 @@
 import { Date, getDate } from "./Date"
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
+import { getGenreOccurencesMap} from "../plugins/transformers/genrecount"
+import { allowedGenreMap } from "../plugins/allowedGenreConfig"
 import readingTime from "reading-time"
 import { classNames } from "../util/lang"
 import { i18n } from "../i18n"
 import { JSX } from "preact"
 import style from "./styles/contentMeta.scss"
+
+const MAINPAGE_FILENAME_SLUG = "index";
 
 interface ContentMetaOptions {
   /**
@@ -13,12 +17,14 @@ interface ContentMetaOptions {
   showReadingTime: boolean
   showComma: boolean
   showWordCount:boolean
+  showGenreCount:boolean
 }
 
 const defaultOptions: ContentMetaOptions = {
   showReadingTime: true,
   showComma: true,
   showWordCount: true,
+  showGenreCount: true,
 }
 
 export default ((opts?: Partial<ContentMetaOptions>) => {
@@ -46,6 +52,21 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       if(options.showWordCount){
         const wordCount = fileData.wordCount;
         segments.push(<span>Word Count: {wordCount}</span>)
+      }
+      if(options.showGenreCount){
+        if(fileData.slug === MAINPAGE_FILENAME_SLUG){
+          const genreOccurencesMap = getGenreOccurencesMap();
+          if(Object.keys(genreOccurencesMap).length > 0){
+            segments.push(<br/>);
+            segments.push(<span> Genres Present in Setlist: </span>);
+          }
+          for (const genre of Object.keys(genreOccurencesMap)) {
+            if(genreOccurencesMap[genre] > 0 && allowedGenreMap[genre]){
+              segments.push(<br/>);
+              segments.push(<span>{genre}: {genreOccurencesMap[genre]} songs in setlist</span>)
+            }
+          }
+        }
       }
 
       return (
