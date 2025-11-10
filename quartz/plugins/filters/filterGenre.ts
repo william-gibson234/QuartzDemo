@@ -1,5 +1,5 @@
 import { QuartzFilterPlugin } from "../types"
-import {allowedGenreMap} from "../allowedGenreConfig"
+import {allowedGenreMap, genresFromFrontmatter} from "../allowedGenreConfig"
 
 
 export const FilterGenre: QuartzFilterPlugin<{}> = () => ({
@@ -10,7 +10,7 @@ export const FilterGenre: QuartzFilterPlugin<{}> = () => ({
         //console.log(`[FilterGenre] Frontmatter keys: ${vfile.data?.frontmatter ? Object.keys(vfile.data.frontmatter).join(', ') : 'none'}`);
         //console.log(`[FilterGenre] Frontmatter object:`, JSON.stringify(vfile.data?.frontmatter, null, 2));
         
-        const genres: string[] = (vfile.data?.frontmatter as any)?.genre ?? [];
+        const genres: string[] = genresFromFrontmatter(vfile);
         //console.log(`[FilterGenre] Genres array:`, genres);
         if(genres.length === 0){
             //console.log(`No tags found for ${vfile.data?.frontmatter?.title}, publishing`);
