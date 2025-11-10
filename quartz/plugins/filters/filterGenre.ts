@@ -13,11 +13,17 @@ export const FilterGenre: QuartzFilterPlugin<{}> = () => ({
     name: "FilterGenre",
     shouldPublish(_ctx, [_tree, vfile]) {
         const tags: string[] = vfile.data?.frontmatter?.tags ?? [];
+        if(tags.length === 0){
+            return true;
+        }
         for (const tag of tags) {
-            if(tag.startsWith("genre:")){
+            if(tag.startsWith("genre: ")){
                 if (allowedGenreMap[tag.split(":")[1]]) {
                     return true;
                 } 
+                else{
+                    return false;
+                }
             }
             else{
                 return true;
