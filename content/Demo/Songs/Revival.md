@@ -1,6 +1,6 @@
 ---
-tags:
-- genre: country
+genre: 
+- country
 ---
 
 **G Major, 79 bpm, on Urav**
