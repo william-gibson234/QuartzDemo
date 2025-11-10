@@ -15,6 +15,10 @@ export const GenreCount: QuartzTransformerPlugin = () => {
                 () =>{
                     return async(tree: HTMLRoot, file: VFile) => {
                         const genres: string[] = genresFromFrontmatter(file);
+                        for (const genre of genres) {
+                            genreOccurencesMap[genre]++;
+                        }
+                        //console.log("state of genreOccurencesMap after processing", file.data.slug, ": ",genreOccurencesMap);
                 }
                 }
             ]
