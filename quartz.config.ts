@@ -73,6 +73,7 @@ const config: QuartzConfig = {
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
       Plugin.WordCount(),
+      Plugin.GenreCount(),
     ],
     filters: [Plugin.RemoveDrafts(),
       Plugin.FilterGenre()],
