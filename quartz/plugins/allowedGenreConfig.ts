@@ -5,7 +5,10 @@ export const allowedGenreMap:Record<string,boolean> = {
     "pop rock": true,
     "alt rock": true,
     "country": true,
+    "indie r&b": true,
     "german metal":false,
+    "indie pop": true,
+    "pop punk": true,
 }
 
 export const genresFromFrontmatter = (vfile: VFile): string[] => 
